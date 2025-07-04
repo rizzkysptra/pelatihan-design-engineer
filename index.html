@@ -76,6 +76,12 @@
   </svg>
 </div>
   <header class="bg-blue-800 dark:bg-gray-800 text-white px-4 py-6 text-center relative">
+  <!-- SVG Wave Bottom -->
+  <div class="absolute inset-x-0 bottom-0 overflow-hidden leading-none" style="line-height: 0">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="w-full h-10 text-white dark:text-gray-800">
+      <path d="M0,0V46.29c47.35,22,104.76,28.24,158,16C230.91,46.41,284,17.65,339,6.11c61.85-13.28,116.56,6.44,169,28.38s106.9,35.25,162,27.3c53.27-7.69,104.06-35.85,158-43.8C906.71,8,963.13,24.86,1018,38.24c69.52,16.82,136.07,24.53,182,21.29V0Z" fill="currentColor"></path>
+    </svg>
+  </div>
     <h1 class="text-2xl md:text-3xl font-bold">PELATIHAN <span class="italic">DESIGN ENGINEER</span> 2D/3D CAD</h1>
     <p class="mt-1 text-blue-200 dark:text-gray-300 font-medium text-sm md:text-base">Hanuri Edukasi Centre - Edisi Kelas Karyawan</p>
     <button onclick="toggleDarkMode()" class="absolute top-4 right-4 text-2xl" id="theme-icon">🌙</button>
@@ -84,7 +90,7 @@
   <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-10" data-aos="fade-up">
   <!-- Sticky Navbar -->
   <nav class="sticky top-0 z-40 backdrop-blur-md bg-white/60 dark:bg-gray-900/60 shadow-sm py-3 px-4 flex justify-between items-center text-sm font-medium">
-    <span class="text-blue-800 dark:text-white">Hanuri Edukasi Centre</span>
+    <span class="text-blue-800 dark:text-white">Hanuri Edukasi Centre - Kelas Karyawan</span>
     <a href="#" onclick="document.querySelector('section.bg-blue-100').scrollIntoView({ behavior: 'smooth' });" class="text-blue-600 dark:text-blue-300 hover:underline">Daftar Sekarang</a>
   </nav>
     <!-- Hero Logo -->
@@ -179,7 +185,7 @@
 
   <section class="bg-blue-100 dark:bg-gray-700 p-6 mt-12 rounded-xl text-center shadow-md" data-aos="fade-up">
   <h2 class="text-xl font-bold text-blue-900 dark:text-white mb-2">Tertarik menjadi Design Engineer handal?</h2>
-  <p class="text-gray-800 dark:text-gray-200 text-sm mb-4">Bergabunglah bersama Hanuri Edukasi Centre dan mulai perjalanan profesionalmu hari ini!</p>
+  <p class="text-gray-800 dark:text-gray-200 text-sm mb-4">Mulai perjalanan profesionalmu hari ini!</p>
   <a href="https://wa.me/6281399548055?text=Halo%2C%20Pak%20Yasin!%0ASaya%20tertarik%20untuk%20mendaftar%20program%20pelatihan%20Design%20Engineering.%20Boleh%20minta%20info%20lebih%20lanjut%3F" target="_blank" class="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-6 rounded-lg transition duration-300">
     Daftar Sekarang
   </a>
@@ -238,6 +244,57 @@
     socialPopup.classList.toggle('opacity-0', !isOpen);
     socialPopup.classList.toggle('translate-x-4', !isOpen);
   });
+</script>
+<!-- Particle Animation Background -->
+<canvas id="particles" class="fixed top-0 left-0 w-full h-full z-0 pointer-events-none"></canvas>
+<script>
+  const canvas = document.getElementById('particles');
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  let particlesArray = [];
+  class Particle {
+    constructor() {
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
+      this.size = Math.random() * 2 + 0.5;
+      this.speedX = Math.random() * 0.5 - 0.25;
+      this.speedY = Math.random() * 0.5 - 0.25;
+    }
+    update() {
+      this.x += this.speedX;
+      this.y += this.speedY;
+      if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
+      if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
+    }
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(100, 149, 237, 0.3)';
+      ctx.fill();
+    }
+  }
+  function init() {
+    particlesArray = [];
+    for (let i = 0; i < 60; i++) {
+      particlesArray.push(new Particle());
+    }
+  }
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (let i = 0; i < particlesArray.length; i++) {
+      particlesArray[i].update();
+      particlesArray[i].draw();
+    }
+    requestAnimationFrame(animate);
+  }
+  window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    init();
+  });
+  init();
+  animate();
 </script>
 </body>
 </html>
