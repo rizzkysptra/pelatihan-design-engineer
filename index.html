@@ -82,12 +82,23 @@
   </header>
 
   <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-10" data-aos="fade-up">
+  <!-- Sticky Navbar -->
+  <nav class="sticky top-0 z-40 backdrop-blur-md bg-white/60 dark:bg-gray-900/60 shadow-sm py-3 px-4 flex justify-between items-center text-sm font-medium">
+    <span class="text-blue-800 dark:text-white">Hanuri Edukasi Centre</span>
+    <a href="#" onclick="document.querySelector('section.bg-blue-100').scrollIntoView({ behavior: 'smooth' });" class="text-blue-600 dark:text-blue-300 hover:underline">Daftar Sekarang</a>
+  </nav>
     <!-- Hero Logo -->
     <div class="flex justify-center">
       <img src="/galeri/hanuri.webp" alt="Logo Hanuri" class="w-40 h-40 object-contain animate-float" data-aos="zoom-in" />
     </div>
 
-    <!-- Deskripsi Pelatihan -->
+    <!-- Decorative Animation Section -->
+<section class="relative py-10" data-aos="zoom-in-up">
+  <div class="absolute -top-12 left-1/2 transform -translate-x-1/2 w-32 h-32 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full blur-3xl opacity-40 animate-ping"></div>
+  <div class="absolute -bottom-16 right-10 w-24 h-24 bg-gradient-to-r from-pink-400 to-yellow-400 rounded-full blur-2xl opacity-30 animate-pulse"></div>
+</section>
+
+<!-- Deskripsi Pelatihan -->
     <section class="bg-white dark:bg-gray-800 p-4 md:p-6 rounded-xl shadow-md">
       <h2 class="text-lg md:text-xl font-bold text-blue-700 dark:text-blue-300 mb-4">Apa yang Akan Dipelajari?</h2>
       <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-200 text-sm md:text-base">
@@ -126,36 +137,49 @@
     </section>
 
     <!-- Galeri Kegiatan -->
+<section class="relative" data-aos="fade-up">
+  <div class="absolute -top-16 left-10 w-24 h-24 bg-gradient-to-r from-green-300 to-blue-400 rounded-full blur-2xl opacity-40 animate-pulse"></div>
+  <div class="absolute -bottom-20 right-8 w-32 h-32 bg-gradient-to-br from-yellow-200 to-pink-300 rounded-full blur-3xl opacity-50 animate-ping"></div>
     <section class="bg-white dark:bg-gray-800 p-4 md:p-6 rounded-xl shadow-md">
       <h2 class="text-lg md:text-xl font-bold text-blue-700 dark:text-blue-300 mb-4">Galeri Kegiatan Pelatihan</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" data-aos="fade-up">
         <div>
-          <img src="/galeri/3d_42.webp" alt="Tes Tulis Yamaha" loading="lazy" class="rounded-lg shadow w-full h-auto" />
+          <img src="/galeri/3d_42.webp" alt="Tes Tulis Yamaha" loading="lazy" class="rounded-lg shadow w-full h-auto transition-transform duration-300 hover:scale-105" data-aos="zoom-in" data-aos-delay="100" />
           <p class="mt-2 text-sm text-gray-700 dark:text-gray-300">08 Mei 2024 - Tes Tulis PT. Yamaha Motor Mold Indonesia</p>
         </div>
         <div>
-          <img src="/galeri/3d_ujian.webp" alt="Evaluasi Cap Wheel" loading="lazy" class="rounded-lg shadow w-full h-auto" />
+          <img src="/galeri/3d_ujian.webp" alt="Evaluasi Cap Wheel" loading="lazy" class="rounded-lg shadow w-full h-auto transition-transform duration-300 hover:scale-105" data-aos="zoom-in" data-aos-delay="200" />
           <p class="mt-2 text-sm text-gray-700 dark:text-gray-300">17 September 2024 - Ujian Praktek Mold 3D Cap Wheel</p>
         </div>
         <div>
-          <img src="/galeri/3d_cetak_foto_fix_a5_2.webp" alt="Praktek Emblem Toyota 1" loading="lazy" class="rounded-lg shadow w-full h-auto" />
+          <img src="/galeri/3d_cetak_foto_fix_a5_2.webp" alt="Praktek Emblem Toyota 1" loading="lazy" class="rounded-lg shadow w-full h-auto transition-transform duration-300 hover:scale-105" data-aos="zoom-in" data-aos-delay="300" />
           <p class="mt-2 text-sm text-gray-700 dark:text-gray-300">30 September 2024 - Praktek Design Emblem Toyota</p>
         </div>
         <div>
-          <img src="/galeri/3d_cetak_foto_fix_a5_4.webp" alt="Praktek Emblem Toyota 2" loading="lazy" class="rounded-lg shadow w-full h-auto" />
+          <img src="/galeri/3d_cetak_foto_fix_a5_4.webp" alt="Praktek Emblem Toyota 2" loading="lazy" class="rounded-lg shadow w-full h-auto transition-transform duration-300 hover:scale-105" data-aos="zoom-in" data-aos-delay="400" />
           <p class="mt-2 text-sm text-gray-700 dark:text-gray-300">30 September 2024 - Praktek Design Emblem Toyota</p>
         </div>
         <div>
-          <img src="/galeri/3d_100.webp" alt="Kelas Tambahan" loading="lazy" class="rounded-lg shadow w-full h-auto" />
+          <img src="/galeri/3d_100.webp" alt="Kelas Tambahan" loading="lazy" class="rounded-lg shadow w-full h-auto transition-transform duration-300 hover:scale-105" data-aos="zoom-in" data-aos-delay="500" />
           <p class="mt-2 text-sm text-gray-700 dark:text-gray-300">02 November 2024 - Kelas Tambahan Belajar Design</p>
         </div>
       </div>
     </section>
-  </main>
+    <!-- Scroll to Top Button -->
+  <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' });" class="fixed bottom-20 right-6 z-50 bg-blue-700 text-white p-3 rounded-full shadow-lg hover:bg-blue-800 transition duration-300" title="Kembali ke atas">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+<!-- Background Visual Enhancer -->
+<div class="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none">
+  <div class="absolute w-72 h-72 bg-blue-300 opacity-30 rounded-full blur-3xl top-10 left-10 animate-pulse"></div>
+  <div class="absolute w-72 h-72 bg-purple-300 opacity-30 rounded-full blur-3xl bottom-20 right-10 animate-ping"></div>
+</div>
+
+</main>
 
   <section class="bg-blue-100 dark:bg-gray-700 p-6 mt-12 rounded-xl text-center shadow-md" data-aos="fade-up">
   <h2 class="text-xl font-bold text-blue-900 dark:text-white mb-2">Tertarik menjadi Design Engineer handal?</h2>
-  <p class="text-gray-800 dark:text-gray-200 text-sm mb-4">Mulai perjalanan profesionalmu hari ini!</p>
+  <p class="text-gray-800 dark:text-gray-200 text-sm mb-4">Bergabunglah bersama Hanuri Edukasi Centre dan mulai perjalanan profesionalmu hari ini!</p>
   <a href="https://wa.me/6281399548055?text=Halo%2C%20Pak%20Yasin!%0ASaya%20tertarik%20untuk%20mendaftar%20program%20pelatihan%20Design%20Engineering.%20Boleh%20minta%20info%20lebih%20lanjut%3F" target="_blank" class="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-6 rounded-lg transition duration-300">
     Daftar Sekarang
   </a>
