@@ -176,23 +176,34 @@
 </script>
 <!-- Floating Social Media Panel -->
 <div class="fixed bottom-6 right-6 z-50">
-  <div class="relative group">
-    <button class="bg-blue-800 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition duration-300">
+  <div class="relative">
+    <button id="socialToggle" class="bg-blue-800 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 flex items-center gap-2">
       <i class="fas fa-share-alt"></i>
+      <span class="hidden sm:inline text-sm font-semibold">Sosial Media</span>
     </button>
-    <div class="absolute right-16 bottom-0 hidden group-hover:flex flex-col gap-3 bg-white dark:bg-gray-800 p-3 rounded-lg shadow-xl transition-all duration-300">
-      <a href="https://www.instagram.com/hanuriedukasicentre" target="_blank" title="Instagram" class="text-pink-600 hover:text-pink-700">
+    <div id="socialPopup" class="absolute right-16 bottom-0 hidden flex-col gap-3 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-xl transition-all duration-500 opacity-0 translate-x-4">
+      <a href="https://www.instagram.com/hanuriedukasicentre" target="_blank" title="Instagram" class="text-pink-600 hover:text-pink-700 flex items-center gap-2">
         <i class="fab fa-instagram"></i> Instagram
       </a>
-      <a href="https://www.linkedin.com/company/hanuri-edukasi-centre" target="_blank" title="LinkedIn" class="text-blue-600 hover:text-blue-700">
+      <a href="https://www.linkedin.com/company/hanuri-edukasi-centre" target="_blank" title="LinkedIn" class="text-blue-600 hover:text-blue-700 flex items-center gap-2">
         <i class="fab fa-linkedin"></i> LinkedIn
       </a>
-      <a href="mailto:yayasanhanuriedukasicentre@gmail.com" title="Email" class="text-red-500 hover:text-red-600">
+      <a href="mailto:yayasanhanuriedukasicentre@gmail.com" title="Email" class="text-red-500 hover:text-red-600 flex items-center gap-2">
         <i class="fas fa-envelope"></i> Email
       </a>
     </div>
   </div>
 </div>
-
+<script>
+  const socialToggle = document.getElementById('socialToggle');
+  const socialPopup = document.getElementById('socialPopup');
+  let isOpen = false;
+  socialToggle.addEventListener('click', () => {
+    isOpen = !isOpen;
+    socialPopup.classList.toggle('hidden', !isOpen);
+    socialPopup.classList.toggle('opacity-0', !isOpen);
+    socialPopup.classList.toggle('translate-x-4', !isOpen);
+  });
+</script>
 </body>
 </html>
